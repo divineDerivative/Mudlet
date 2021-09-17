@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>who.guild</name>
+			<script>who.onplane = {}
+sendGMCP("Comm.Channel.Players")
+who.group = string.title(string.lower(multimatches[1][2]))</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>3</conditonLineDelta>
+			<mStayOpen>100</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^\*+\[ .+(CONSORTIUM).+ \]\*+$</string>
+				<string>^Guildmember\s+Rank\s+Path\s+Position\s+GT\s+OffP\s*$</string>
+				<string>------------</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</regexCodePropertyList>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>person</name>
+				<script>table.insert(who.onplane, matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(\w+)\s+(\d+|\*|COL|NOV)\s+</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>end</name>
+				<script>if tonumber(matches[2]) &gt; 0 then
+	local names = who.offplane(who.group)
+	echo("\nMembers off plane: "..table.concat(names, ", "))
+end
+setTriggerStayOpen("who.guild", 0)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Currently, there (?:is|are) \d+ members? on visible Planes and (\d+) on other Planes\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>who.city</name>
+			<script>who.onplane = {}
+sendGMCP("Comm.Channel.Players")
+who.group = string.title(string.lower(multimatches[1][2]))</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>3</conditonLineDelta>
+			<mStayOpen>100</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^\*+\[ THE .+ OF (?:NEW)? ?(\w+) \]\*+$</string>
+				<string>^(Commune Member|Citizen)\s+Class\s+Rank\s+Position\s+CT\s+OffP$</string>
+				<string>---------</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</regexCodePropertyList>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>person</name>
+				<script>table.insert(who.onplane, matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(\w+)\s+\w+</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>end</name>
+				<script>if tonumber(matches[3]) &gt; 0 then
+	local names = who.offplane(who.group)
+	echo("\n"..matches[2].." off plane: "..table.concat(names, ", "))
+end
+setTriggerStayOpen("who.city", 0)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Currently, there (?:is|are) \d+ (Citizens?|Commune Members?) on visible Planes and (\d+) on other Planes\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>who.order</name>
+			<script>who.onplane = {}
+sendGMCP("Comm.Channel.Players")
+who.group = matches[2]</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>2</conditonLineDelta>
+			<mStayOpen>100</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^These faithful of the Divine Order of (\w+), the Architect are online\:$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="yes" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>person</name>
+				<script>for i = 1, #matches, 2 do
+	table.insert(who.onplane, matches[i])
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>([A-Z][a-z]+)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>end</name>
+				<script>if tonumber(matches[2]) &gt; 0 then
+	local names = who.offplane(who.group)
+	echo("\nMembers off plane: "..table.concat(names, ", "))
+end
+setTriggerStayOpen("who.order", 0)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^There (?:are|is) \d+ mortals? in your Circle \(and below\) on visible Planes and (\d+) on other Planes\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage />
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>who package</name>
+			<packageName></packageName>
+			<script>if not who then who = {} end
+
+function who.all(group)
+local names = {}
+
+for person in pairs(gmcp.Comm.Channel.Players) do
+	if gmcp.Comm.Channel.Players[person]["channels"] then
+		for channel in pairs(gmcp.Comm.Channel.Players[person]["channels"]) do
+			if string.findPattern(gmcp.Comm.Channel.Players[person]["channels"][channel], group) then
+				table.insert(names, gmcp.Comm.Channel.Players[person]["name"])
+			end
+		end
+	end
+end
+
+return names
+
+end
+
+function who.offplane(group)
+local names = who.all(group)
+local list = {}
+--wname = name from GMCP
+--vname = name visible on who list
+for i,wname in pairs(names) do
+	for k,vname in pairs(who.onplane) do
+		if wname == vname then
+			names[i] = nil
+		end
+	end
+end
+for i, person in pairs(names) do
+	list[#list+1] = person
+end
+
+return list
+
+end</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>

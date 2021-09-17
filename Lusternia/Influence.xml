@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>login</name>
+			<script>sendGMCP([[Char.Skills.Get {"group":"Influence"}]])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Password correct. Welcome to Lusternia.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>windmills single target</name>
+			<script>wm.inf.go = false
+cecho(" &lt;green&gt;Finished influencing")
+if esteem &gt; 370 then
+	notice.main("Imbue your esteem")
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^.+ puffs up (?:his|her) chest and a crazy gleam enters (?:his|her) eyes as s?he vigorously agrees with you that (?:his|her) intelligence and strength far surpass anyone else's\.$</string>
+				<string>^.+ sighs dramatically and searches (?:his|her) pockets, looking for something to give you\.$</string>
+				<string>^.+ wraps an arm around you, declaring you to be the truest of friends\.$</string>
+				<string>^.+ breaks down and sobs, telling you how true it is that s?he (?:is|are) nothing but a pathetic fraud\.$</string>
+				<string>^.+ drops down on (?:his|her) knees and worships the very ground you walk on!$</string>
+				<string>^.+ calmly tells you that s?he knows (?:his|her) own strengths and weaknesses, thank you very much\. Since your attempts at inflating her ego are uncovered, you are disgraced and slink away in humiliation\.$</string>
+				<string>^.+ slaps (?:his|her) knee and declares that, by the gods, the Village of \w+ should follow the .+ after all!$</string>
+				<string>^.+ loudly denounces you as a second-rate swindler\. Your scheme exposed, you are utterly mortified and are forced to stammer apologies\.$</string>
+				<string>^.+ wildly looks around, his left eye suddenly developing a nervous twitch, and asks you to keep a look out for 'them'\.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>room finished</name>
+			<script>wm.inf.go = false
+cecho(" &lt;green&gt;Finished influencing")
+if esteem &gt; 370 then
+	notice.main("Imbue your esteem")
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^.+ is so caught up in admiring (?:him|her)self that s?he barely notices you\.$</string>
+				<string>^.+ keeps asking (?:him|her)self why s?he considered giving so much away, and pays you no attention\.$</string>
+				<string>^.+ keeps thumping (?:him|her)self on the head, not hearing a word you say\.$</string>
+				<string>^.+ doesn't even seem to notice you, as s?he (?:are|is) lost thinking of (?:his|her) friendship with you\.$</string>
+				<string>^.+ doesn't even seem to notice your actions, as s?he (?:is|are) lost daydreaming a future living with you\.$</string>
+				<string>^.+ doesn't even seem to notice you, as s?he is lost daydreaming of (?:his|her) true love.</string>
+				<string>^.+ brushes you off, apparently too tired to engage you in any meaningful dialogue\.$</string>
+				<string>^.+ pays little attention to you and mutters about whether s?he should have been so trusting to others\.$</string>
+				<string>^.+ says, "That sounds interesting, but I'm currently considering .+\. Perhaps we can talk about it later\?"$</string>
+				<string>^.+ says, "Actually, I am seriously considering .+, but I need time to think it over\. Perhaps we can talk about it later\?"$</string>
+				<string>^.+ says, "We've only just declared independence and you want us to line up behind you already\? Give me a few minutes to clear my head first, okay\?"</string>
+				<string>^Apparently not hearing anything you said, .+ grabs you by the shoulders and demands to know if you are one of 'them'\.$</string>
+				<string>^.+ doesn't even seem to notice you, as s?he (?:are|is) lost thinking of (?:his|her) best friend\.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>won't work</name>
+			<script>wm.inf.go = false
+cecho(" &lt;green&gt;Try a different type of influence.")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^.+ snorts in derision at you and shoves you away\.$</string>
+				<string>^.+ tickles you, obviously amused by your antics\.$</string>
+				<string>^.+ says, "Go away! I don't get involved in politics."</string>
+				<string>^.+ says, "Yes, I agree. That's why I already follow the .+, you dunce\."$</string>
+				<string>^.+ snorts derisively and rebuffs your attention\.$</string>
+				<string>^.+ scoffs at you, clearly unimpressed\.$</string>
+				<string>^.+ says, "I follow .+, and nothing you say can change my mind\."$</string>
+				<string>^.+ smiles at you condescendingly and pats your head\.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>prompt</name>
+			<script>wmInfluence()</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>return isPrompt()</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>4</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Demeanors</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>greedy</name>
+				<script>cecho("\nWeak to &lt;green&gt;weaken&lt;grey&gt;. Immune to &lt;red&gt;charity&lt;grey&gt;.")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>is a greedy bugger</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>friendly</name>
+				<script>cecho("\nWeak to &lt;green&gt;charity&lt;grey&gt;. Immune to &lt;red&gt;paranoia&lt;grey&gt;.")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>displays a friendly disposition</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>brave</name>
+				<script>cecho("\nWeak to &lt;green&gt;empower&lt;grey&gt;. Immune to &lt;red&gt;weaken&lt;grey&gt;.")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>has a brave soul</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>sensuous</name>
+				<script>cecho("\nWeak to &lt;green&gt;seduction&lt;grey&gt;. Immune to &lt;red&gt;empower&lt;grey&gt;.")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>enjoys an extremely sensuous disposition</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>intimidating</name>
+				<script>cecho("\nWeak to &lt;green&gt;paranoia&lt;grey&gt;. Immune to &lt;red&gt;seduction&lt;grey&gt;.")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>possesses an intimidating demeanor</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>let's get started</name>
+			<script>local types = {"charity", "weaken", "empower", "seduce", "paranoia", "city"}
+
+if table.contains(types, matches[3]) then
+	wm.inf.target = matches[2]
+	wm.inf.type = matches[3]
+	if wm.inf.singleTar then
+		cecho("&lt;green&gt;Influencing one "..wm.inf.target.." with "..wm.inf.type.."\n")
+	else
+		cecho("&lt;green&gt;Influencing every "..wm.inf.target.." in the room with "..wm.inf.type.."\n")
+	end
+	wm.inf.next = 1
+	wm.inf.go = true
+	wmInfluence()
+else
+	cecho("&lt;red&gt;Invalid influencing type. Please choose: &lt;grey&gt;"..table.concat(types, ", "))
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^inf (\w+) (\w+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>toggle room</name>
+			<script>if matches[2] == "room" then
+	disableTrigger("windmills single target")
+	wm.inf.singleTar = false
+	cecho("&lt;green&gt;Influencing every target in the room")
+elseif matches[2] == "one" then
+	enableTrigger("windmills single target")
+	wm.inf.singleTar = true
+	cecho("&lt;green&gt;Influencing one mob at a time")
+else
+	if wm.inf.singleTar then
+		cecho("&lt;green&gt;Influencing one mob at a time")
+	else
+		cecho("&lt;green&gt;Influencing every target in the room")
+	end
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^wminf ?(room|one)?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>stop</name>
+			<script>wm.inf.go = false
+cecho("&lt;green&gt;Windmills influencing disabled")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^wmstop$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>startup stuff</name>
+			<packageName></packageName>
+			<script>if not wm then wm = {} end
+if not wm.inf then wm.inf = {} end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>skill_finder</name>
+			<packageName></packageName>
+			<script>function skill_finder()
+local name = gmcp.Char.Skills.List.group
+if name == "influence" then
+	wm.inf.skills = gmcp.Char.Skills.List.list
+
+-- empower table
+	wm.inf.empower = {}
+	if table.contains(wm.inf.skills, "Compliments") then
+		table.insert(wm.inf.empower, "compliments")
+	end
+	if table.contains(wm.inf.skills, "Admiration") then
+		table.insert(wm.inf.empower, "admiration")
+	end
+	if table.contains(wm.inf.skills, "Praise") then
+		table.insert(wm.inf.empower, "praise")
+	end
+--charity table
+	wm.inf.charity = {}
+	if table.contains(wm.inf.skills, "Begging") then
+		table.insert(wm.inf.charity, "begging")
+	end
+	if table.contains(wm.inf.skills, "Supplication") then
+		table.insert(wm.inf.charity, "supplication")
+	end
+	if table.contains(wm.inf.skills, "Wheedling") then
+		table.insert(wm.inf.charity, "wheedling")
+	end
+--weaken table
+	wm.inf.weaken = {}
+	if table.contains(wm.inf.skills, "Teasing") then
+		table.insert(wm.inf.weaken, "teasing")
+	end
+	if table.contains(wm.inf.skills, "Mockery") then
+		table.insert(wm.inf.weaken, "mockery")
+	end
+	if table.contains(wm.inf.skills, "Derision") then
+		table.insert(wm.inf.weaken, "derision")
+	end
+--seduction table
+	wm.inf.seduce = {}
+	if table.contains(wm.inf.skills, "Flattery") then
+		table.insert(wm.inf.seduce, "flattery")
+	end
+	if table.contains(wm.inf.skills, "Charm") then
+		table.insert(wm.inf.seduce, "charm")
+	end
+	if table.contains(wm.inf.skills, "Beguiling") then
+		table.insert(wm.inf.seduce, "beguiling")
+	end
+--paranoia table
+	wm.inf.paranoia = {}
+	if table.contains(wm.inf.skills, "Rumours") then
+		table.insert(wm.inf.paranoia, "rumours")
+	end
+	if table.contains(wm.inf.skills, "Distrust") then
+		table.insert(wm.inf.paranoia, "distrust")
+	end
+	if table.contains(wm.inf.skills, "Conspiracies") then
+		table.insert(wm.inf.paranoia, "conspiracies")
+	end
+--city table
+	wm.inf.city = {}
+	if table.contains(wm.inf.skills, "Accordance") then
+		table.insert(wm.inf.city, "accordance")
+	end
+	if table.contains(wm.inf.skills, "Collaboration") then
+		table.insert(wm.inf.city, "collaboration")
+	end
+	if table.contains(wm.inf.skills, "Assimilation") then
+		table.insert(wm.inf.city, "assimilation")
+	end
+	if table.contains(wm.inf.skills, "Lectures") then
+		table.insert(wm.inf.city, "lectures")
+	end
+	if table.contains(wm.inf.skills, "Recitation") then
+		table.insert(wm.inf.city, "recitation")
+	end
+	if table.contains(wm.inf.skills, "Oration") then
+		table.insert(wm.inf.city, "oration")
+	end
+end
+
+
+end</script>
+			<eventHandlerList>
+				<string>gmcp.Char.Skills.List</string>
+			</eventHandlerList>
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>wmInfluence</name>
+			<packageName></packageName>
+			<script>function wmInfluence()
+
+if wm.inf.go == true then
+	if gmcp.Char.Vitals.balance == "1" and gmcp.Char.Vitals.equilibrium == "1" then
+		if wm.inf.next &gt; #wm.inf[wm.inf.type] then
+			wm.inf.next = 1
+		end
+		send("influence "..wm.inf.target.." with "..wm.inf[wm.inf.type][wm.inf.next])
+		wm.inf.next = wm.inf.next + 1
+		wm.inf.go = 2
+		tempTimer(1, [[if wm.inf.go == 2 then wm.inf.go = true end]])
+	end
+end
+
+end</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>
