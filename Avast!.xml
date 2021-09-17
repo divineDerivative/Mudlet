@@ -1,0 +1,1752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>logout</name>
+			<script>remember("avast")
+saveVars()</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>You grow still and begin to silently pray for preservation of your soul while you are out of the land.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>highlights</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>green</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#00ff00</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^With a 'CLICK,' .+'s mechanisms snap into place, and the weapon is once again ready to fire\.$</string>
+					<string>The hull is now fully repaired!</string>
+					<string>The sails are now fully repaired!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>bad hightlight</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You cease the process of aiming the ship's weapon.</string>
+					<string>The target is out of range of an Arcanian arm thrower.</string>
+					<string>The roaring inferno engulfs you as you fight to find a way out.</string>
+					<string>The magical shield around the ship fades away into nothingness.</string>
+					<string>^An amethyst blaze within the eyes of .+ dies down to mere embers\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>monster dead</name>
+			<script>avast.monster = false
+avast.note("Monster died in "..avast.count.." hits")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^.+ is defeated and begins to sink to the depths\.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>monster pulled</name>
+			<script>avast.monster = true
+disableTrigger("monster pulled")
+tempTimer(2, [[enableTrigger("monster pulled")]])
+tempTimer(600, [[avast.note("Ready to pull another seamonster, maybe")]])
+avast.count = 0</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>A swell rocks your vessel as something rises from the depths.</string>
+				<string>The result of the depths disturbed, a great wave crashes against your ship, sending spume showering down over all aboard.</string>
+				<string>^\(Party\)\: .+ says, "Monster summoned!"$</string>
+				<string>A fearfilled silence weighs heavily upon the waves as something shifts in the dark water.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+				<integer>3</integer>
+				<integer>1</integer>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>watch_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>spyglass monster results</name>
+				<script>if avast.watch.calling then
+  send("pt "..matches[1])
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#55aaff</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^.+ appears to be brimming with health\.$</string>
+					<string>^.+ appears sluggish and feeble\.$</string>
+					<string>^.+ appears slightly worn down\.$</string>
+					<string>^.+ is bleeding lightly from shallow wounds\.$</string>
+					<string>^.+ quite battered and bruised, covered in numerous wounds\.$</string>
+					<string>^.+ appears weakened\.$</string>
+					<string>^.+ appears to be near death\.$</string>
+					<string>^.+ appears grievously hurt and beaten, nearly beyond repair\.$</string>
+					<string>^.+ is bleeding copiously from multiple wounds\.$</string>
+					<string>^.+ appears quite battered and bruised, covered in numerous wounds\.$</string>
+					<string>^.+ appears weakened considerably\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>shipwarning</name>
+				<script>send("pt "..matches[1])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Shipwarning is now active.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>shipwarning down</name>
+				<script>send("pt deactivating shipwarning")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You relax your awareness of the movement of nearby ships.</string>
+					<string>Shipwarning is already deactivated.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>ship sighted</name>
+				<script>avast.watch.warning = avast.watch.warning or {}
+if not table.contains(avast.watch.warning, matches[2]) then
+  table.insert(avast.watch.warning, matches[2])
+  send("pt "..matches[2].." spotted "..matches[3])
+end
+deleteLineP()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^You see "(.+)" flying .+ (to the \w+ at \w+ range)\.</string>
+					<string>^You see "(.+)" (to the \w+ at \w+ range)\.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>who's on board</name>
+				<script>avast.watch.shipscan = {ship = matches[2], people = {}}</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>20</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Aboard (.+), you see\:$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>people</name>
+					<script>table.insert(avast.watch.shipscan.people, matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(\w+)$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>close gate</name>
+					<script>send("pt aboard the "..avast.watch.shipscan.ship..": "..table.concat(avast.watch.shipscan.people, ", "))
+setTriggerStayOpen("who's on board", 0)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string></string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>7</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>shipscan list</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>200</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>** SHIPSCAN BRIEF ** You see the following ships nearby.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>ship name</name>
+					<script>deleteLine()
+echo("\n"..matches[2])
+cechoLink(matches[3], [[send("shipscan ]]..matches[3]..[[")]], "shipscan", true)
+echo(matches[4])
+if avast.watch.scanAll then
+  send("shipscan "..matches[3])
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(\[H\] )(.+)( \((?:WC|SS|WG)\).+)$</string>
+						<string>^(\w+\: )(.+)( \((?:WC|SS|WG)\).+)$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>close gate</name>
+					<script>setTriggerStayOpen("shipscan list", 0)
+avast.watch.scanAll = false</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string></string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>7</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>general</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>doused</name>
+				<script>avast.roomFire = false</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You saturate the ground with water, putting out the fire that raged.</string>
+					<string>^\w+ saturates the ground with water from (?:her|his) bucket, putting out the fire that raged\.$</string>
+					<string>You frantically try to douse the non-existent fires.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>1</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>room is on fire</name>
+				<script>avast.roomFire = true
+if not avast.weapons.aiming and not avast.clearing then
+  send("douse room")
+  send("refill empty with water")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The roaring inferno engulfs you as you fight to find a way out.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>ship shield up</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>A ray of emerald light cascades from the ship's figurehead and part into many separate strands of light that harness the winds to weave a magical shield around the ship.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>shield down</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The magical shield around the ship fades away into nothingness.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>hull repair</name>
+				<script>if not avast.weapons.aiming and not avast.maintain then
+  send("maintain hull", false)
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Hull repair continues.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>2</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>maintaining</name>
+				<script>avast.maintain = true</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You begin actively maintaining the ship's hull.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>hull full</name>
+				<script>avast.maintain = false</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The hull is now fully repaired!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>counting hits</name>
+				<script>avast.count = avast.count + 1
+avast.note("Hit registered, "..avast.count.." total")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^A rotating disc glides away from ".+" at .+, wreaking havoc across its body\.$</string>
+					<string>^A heavy wooden shaft streaks from ".+" toward .+, burying itself deeply in its side\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>hits on ship</name>
+				<script>avast.count = avast.count + 1
+avast.note("Hit registered")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^A heavy wooden shaft streaks from ".+" toward ".+", burying itself deeplyin her hull\.$</string>
+					<string>^A mass of sharp pieces of metal and wood fly out from ".+" and rain destruction on".+"\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>clearing</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>hookshot</name>
+					<script>send("pt hookshot cleared")
+avast.clearing = false</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Your efforts are rewarded as the tether finally gives and snaps, releasing a grappling hook's hold upon this vessel.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>starshot</name>
+					<script>send("pt "..matches[2].. " cleared")
+avast.clearing = false</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You have completely cleared the tangled spider-shot from an? (\w+)\.$</string>
+						<string>^You have completely cleared the tangled spider-shot from an Arcanian arm (thrower)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>sails</name>
+					<script>send("pt sails cleared")
+avast.clearing = false</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>As you remove the final remnants of the chain-shot from the ship, the sails are once again able to be unfurled.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>figurehead</name>
+					<script>send("pt figurehead cleared")
+avast.clearing = false</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You have completely cleared the star-shot from around the figurehead.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>I doused</name>
+				<script>if gmcp.Room.Info.name == "Crow's nest" then
+  send("pt sails doused")
+else
+  send("pt fire doused at "..gmcp.Room.Info.name)
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You saturate the ground with water, putting out the fire that raged.</string>
+					<string>The flames ravaging the sails sputter and die out.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>shield up</name>
+				<script>--echo and tracking variable</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>A ray of emerald light cascades from the ship's figurehead and part into many separate strands oflight that harness the winds to weave a magical shield around the ship.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>You died!</name>
+				<script>avast.reset()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The wine-dark sea rises to crush your ship and, with it, your life from you.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>weapons_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>fire on balance</name>
+				<script>if avast.monster then
+  send("fire "..avast.weapons.weapon.." at seamonster")
+else
+  send("fire "..avast.weapons.weapon)
+end
+disableTrigger("fire on balance")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You have recovered balance on all limbs.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>weapon on bal</name>
+				<script>if string.find(matches[2], avast.weapons.weapon) and not avast.weapons.aiming and not avast.clearing then
+  --[[if avast.weapons.alternate then
+    for k,v in ipairs(avast.weapons.alternate) do
+      if avast.weapons.ammo == v then
+        if k == #avast.weapons.alternate then
+          avast.weapons.ammo = avast.weapons.alternate[1]
+        else
+          avast.weapons.ammo = avast.weapons.alternate[k+1]
+        end
+      end
+    end
+    avast.weapons.weapon_from_ammo(avast.weapons.ammo)
+  end]]
+  avast.weapons.fire()
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#00ff00</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^With a 'CLICK,' (.+)'s mechanisms snap into place, and the weapon is once again ready to fire\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>fired</name>
+				<script>send("curing on")
+if not avast.maintain then
+  send("maintain hull")
+end
+
+avast.weapons.aiming = false</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^You call out "Fire!"</string>
+					<string>You've lost sight of your target and stop aiming</string>
+					<string>The target is out of range of </string>
+					<string>You cease the process of aiming the ship's weapon.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>2</integer>
+					<integer>2</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>tried too soon</name>
+				<script>avast.weapons.aiming = false</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>That weapon cannot be fired again so quickly.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>firing started</name>
+				<script>avast.weapons.aiming = true
+send("curing off")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You begin the painstaking process of aiming </string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>2</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>prompt</name>
+				<script>if avast.weapons.aiming then
+  cecho("&lt;red&gt; {Aiming}")
+end
+if avast.clearing then
+  cecho("&lt;red&gt; {Clearing}")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string></string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>7</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>no dragon tears</name>
+				<script>avast.weapons.tears = false
+
+avast.note("Tried to dip ammo but there is no vast; will not try again.")
+avast.note("&lt;yellow&gt;(&lt;white&gt;avast fire dipped&lt;yellow&gt;) &lt;green&gt;to try dipping again")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>There is no vat of dragon's tears here.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>fire on summon</name>
+				<script>avast.weapons.fire()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>A swell rocks your vessel as something rises from the depths.</string>
+					<string>The result of the depths disturbed, a great wave crashes against your ship, sending spume showering down over all aboard.</string>
+					<string>A fearfilled silence weighs heavily upon the waves as something shifts in the dark water.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>weapon tangled</name>
+				<script>avast.queue = avast.queue or {}
+table.insert(avast.queue, "clear "..avast.weapons.weapon)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The spider-shot entangling that weapon must be cleared before it can be fired.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>on balance</name>
+				<script>if not avast.weapons.aiming and not avast.clearing then
+  if avast.roomFire then
+    send("douse room")
+  elseif avast.queue then
+    send(avast.queue[1])
+    table.remove(avast.queue,1)
+  end
+end
+   </script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You have recovered balance on all limbs.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>horald up</name>
+				<script>avast.weapons.horald = true</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You draw forth a card depicting Horald, Captain of the Margam, suffusing you with the captain's rage and cunning.</string>
+					<string>You are already under the effects of the legend of Horald.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>horald down</name>
+				<script>avast.weapons.horald = false</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The effects of the legend of Horald fade away.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>no horald charges</name>
+				<script>expandAlias("avast horald off")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>A card depicting Horald, Captain of the Margam currently lacks the power to invoke its stored potential.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>gags</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+		</TriggerGroup>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>helm_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>New trigger</name>
+				<script>if not avast.weapons.aiming then
+  send("shit manoeuvre "..matches[2])
+end
+
+</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Party\)\: .+ says, "(Smartorders|Evasives)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Evasives up</name>
+				<script>send("pt Evasives up!")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You initiate evasive manoeuvres, with rapid sharp and shallow turns in an unpredictable pattern.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>captain</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>sails tangled</name>
+				<script>send("pt sails tangled, SWING UP from the Quarterdeck and CLEAR RIGGING")
+--set temp variable to avoid multiple calls
+</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Your riggings are too entangled and must be cleared before you can use your sails again.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>margam squint check</name>
+			<script>if string.find(matches[2], margamPerson) then
+  margamDir = "e"
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>1</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^(.+)$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>end on prompt</name>
+				<script>if margamDir then
+  medic.chaser.addFree("w")
+else
+  medic.chaser.addFree("e")
+end
+disableTrigger("margam squint check")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string></string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>7</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</Trigger>
+		<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Horald moved someone else</name>
+			<script>margamPerson = matches[2]
+enableTrigger("margam squint check")
+send("sq e")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^Horald, Captain of The Margam lifts (\w+) off the ground, clutching (?:his|her) body in a strong grip before hurling (?:him|her) across the deck\.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>start firing</name>
+			<script>if not avast.skills then
+  avast.note("&lt;red&gt;WARNING! &lt;white&gt;Seafaring skill level not set (&lt;yellow&gt;avast set skill &lt;highest skill in Seafaring&gt;&lt;white&gt;)")
+  return
+end
+
+if isActive("weapons_module", "trigger") == 0 then
+  avast.note("Re-enabling weapons")
+  enableTrigger("weapons_module")
+end
+
+avast.weapons.fire()</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^sf$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>tell me your skill</name>
+			<script>avast.checking_skills = true
+sendGMCP([[Char.Skills.Get {"group":"seafaring"]])
+send("\n", false)
+tempTimer(1,[[avast.adjust_skills("]]..string.title(matches[2])..[[")]])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast set skill (\w+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>set ammo</name>
+			<script>avast.weapons.alternate = nil
+local acceptable = {"wardisc","hookshot","flare","shaft","dart","chainshot","starshot","spidershot",}
+local ammo = string.lower(matches[2])
+if ammo == "war disc" then ammo = "wardisc"
+elseif ammo == "disc" then ammo = "wardisc"
+elseif ammo == "hook shot" then ammo = "hookshot"
+elseif ammo == "hook" then ammo = "hookshot"
+elseif ammo == "chain shot" then ammo = "chainshot"
+elseif ammo == "chain" then ammo = "chainshot"
+elseif ammo == "star shot" then ammo = "starshot"
+elseif ammo == "star" then ammo = "starshot"
+elseif ammo == "spider shot" then ammo = "spidershot"
+elseif ammo == "spider" then ammo = "spidershot"
+elseif ammo == "darts" then ammo = "dart"
+elseif ammo == "flares" then ammo = "flare"
+elseif not table.contains(acceptable, ammo) then
+  avast.note("Unrecognized ammo type, please choose from the following: &lt;green&gt;"..table.concat(acceptable, "&lt;white&gt;, &lt;green&gt;"))
+  return
+end
+avast.weapons.weapon_from_ammo(ammo)
+avast.weapons.ammo = ammo
+avast.note("Ammo type set to &lt;green&gt;"..avast.weapons.ammo)
+avast.note("Weapon type auto configured to &lt;green&gt;"..avast.weapons.weapon)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast set ammo (\w+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>voyage over</name>
+			<script>avast.monster = false
+avast.weapons.weapon = false
+avast.weapons.ammo = false</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^huntoff$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>stop firing</name>
+			<script>disableTrigger("weapons_module")
+avast.note("Disabling weapons")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast stop$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>monster toggle</name>
+			<script>if avast.monster then
+  avast.monster = false
+  cecho("\n &lt;green&gt; No longer trying to fire at monster")
+else
+  avast.monster = true
+  cecho("\n &lt;red&gt; Forcing target monster")
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^monster$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>try firing dipped</name>
+			<script>avast.weapons.tears = true
+avast.note("Will attempt to dip ammo")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast fire dipped$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>toggle dousing</name>
+			<script>if matches[2] == "stop" or matches[2] == "off" then
+  avast.roomFire = false
+  disableTrigger("room is on fire")
+  avast.note("Will no longer douse fires","red")
+elseif matches[2] == "start" or matches[2] == "on" then
+  enableTrigger("room is on fire")
+  avast.note("Will now douse fires","green")
+else
+  if isActive("room is on fire", "trigger") &gt; 0 then
+    avast.roomFire = false
+    disableTrigger("room is on fire")
+    avast.note("Will no longer douse fires","red")
+  else
+    enableTrigger("room is on fire")
+    avast.note("Will now douse fires","green")
+  end
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast dousing ?(\w+)?$</regex>
+		</Alias>
+		<AliasGroup isActive="no" isFolder="yes">
+			<name>Captain</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+		</AliasGroup>
+		<Alias isActive="yes" isFolder="no">
+			<name>clear rigging</name>
+			<script>send("swing up")
+tempTimer(2, [[expandAlias("clear rigging")]])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^rig$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>set ammo alternating</name>
+			<script>--make sure correct alias is firing
+if matches[2] == "war disc" then
+  expandAlias("avast set ammo wardisc",false)
+  return
+elseif matches[2] == "hook shot" then
+  expandAlias("avast set ammo hookshot",false)
+  return
+elseif matches[2] == "chain shot" then
+  expandAlias("avast set ammo chainshot",false)
+  return
+elseif matches[2] == "star shot" then
+  expandAlias("avast set ammo starshot",false)
+  return
+elseif matches[2] == "spider shot" then
+  expandAlias("avast set ammo spidershot",false)
+  return
+end
+
+local acceptable = {"wardisc","hookshot","flare","shaft","dart","chainshot","starshot","spidershot",}
+local ammo = string.split(matches[2], " ")
+
+for k,v in ipairs(ammo) do
+--normalise
+  if v == "war" then ammo[k] = "wardisc"
+  elseif v == "disc" then ammo[k] = "wardisc"
+  elseif v == "hook" then ammo[k] = "hookshot"
+  elseif v == "chain" then ammo[k] = "chainshot"
+  elseif v == "star" then ammo[k] = "starshot"
+  elseif v == "spider" then ammo[k] = "spidershot"
+  elseif v == "darts" then ammo[k] = "dart"
+  elseif v == "flares" then ammo[k] = "flare"
+  elseif not table.contains(acceptable, v) then
+    avast.note("Unrecognized ammo type, please choose from the following: &lt;green&gt;"..table.concat(acceptable, "&lt;white&gt;, &lt;green&gt;"))
+    break
+  end
+end
+avast.weapons.alternate = ammo
+avast.weapons.ammo = ammo[1]
+avast.weapons.weapon_from_ammo(ammo[1])
+
+avast.note("Alternating ammo types &lt;green&gt;"..table.concat(avast.weapons.alternate, " "))
+avast.note("Weapon type auto configured to &lt;green&gt;"..avast.weapons.weapon)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast set ammo (\w+ .+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>check all nearby ships</name>
+			<script>avast.watch.scanAll = true
+send("shipscan brief")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^shipscan all$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>horald mode</name>
+			<script>if matches[2] then
+  if matches[2] == " on" or matches[2] == " start"then
+    avast.weapons.doHorald = true
+    avast.note("Will keep up Horald buff")
+  else
+    avast.weapons.doHorald = false
+    avast.note("No longer keeping up Horald")
+  end
+else
+  if avast.weapons.doHorald then
+    avast.weapons.doHorald = false
+    avast.note("No longer keeping up Horald")
+  else
+    avast.weapons.doHorald = true
+    avast.note("Will keep up Horald buff")
+  end
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast horald( (?:on|off|stop|start))?$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>clearing things</name>
+			<script>send(matches[1])
+avast.clearing = true</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^clear (.+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>reset</name>
+			<script>avast.reset()</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^avast reset$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>Initialization</name>
+			<packageName></packageName>
+			<script>if not loaded then loadVars() loaded = true end
+
+if not avast then avast = {deckhand = {}, weapons = {}, helm = {}, watch = {}, command = {},} avast.reset() end
+avast.version = "0.1"
+
+
+function avast.reset()
+  avast.monster = false
+  avast.weapons.weapon = false
+  avast.weapons.ammo = false
+  avast.weapons.tears = true
+  avast.weapons.aiming = false
+  avast.clearing = false
+  send("curing on")
+  avast.note("Resetting variables")
+end
+
+if io.exists(getMudletHomeDir() .. "/avast skills.lua") then
+	table.load(getMudletHomeDir() .. "/avast skills.lua", avast.skills)
+end
+
+function avast.note(message, color)
+	if not color then color = "white" end
+	cecho("\n&lt;yellow&gt;(&lt;white&gt;Avast!&lt;yellow&gt;) &lt;"..color.."&gt;"..message)
+end
+
+function deleteLineP()
+  deleteLine()
+  tempLineTrigger(1,1, [==[ if isPrompt() then
+      deleteLine()
+      elseif string.match(line, "^= %[Sail %w+%%?%] %[Hull%] %[Wind: %w+@%d+ kts%] %[Crs/Spd: %w+@%d+%] %[Seas: %w+%]%s?") 
+          or string.match(line, "^= Sl %w+%%? %- hp %w+%%?,Hl: %w+%%?,Wd %w+@%d+kts,Cr/Sp %w+@%d+,Sea %w+")
+          or string.match(line, "^= S..@h..,H..,W&lt;%-%w+@%d+kts,C/S%-&gt;%w+@%d+,%w+") then
+        deleteLine()
+        tempLineTrigger(1,1, [[if isPrompt() then deleteLine() end]])
+      end]==])
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>weapon stuff</name>
+			<packageName></packageName>
+			<script>function avast.weapons.find_weapon()
+if gmcp.Char.Items.List.location == "room" then
+  local weaponList = {"thrower", "onager", "a ballista"}
+  local stop = false
+  avast.weapons.inRoom = {}
+  for i in pairs(gmcp.Char.Items.List.items) do
+    for k,v in pairs(weaponList) do
+      if string.match(gmcp.Char.Items.List.items[i].name, v) then
+        table.insert(avast.weapons.inRoom, gmcp.Char.Items.List.items[i].id)
+      end
+    end
+  end
+end
+end
+
+function avast.weapons.fire()
+avast.weapons.weapon_from_ammo(avast.weapons.ammo)
+if avast.weapons.doHorald and not avast.weapons.horald then
+  send("ldeck draw horald")
+end
+if avast.weapons.weapon and avast.weapons.ammo then
+  if avast.monster then
+    send("load "..avast.weapons.weapon.." with "..avast.weapons.ammo)
+    if table.contains(avast.skills.weapons, "Loadweapon") then
+      send("fire "..avast.weapons.weapon.." at seamonster")
+    else
+      enableTrigger("fire on balance")
+    end
+  else
+    if avast.weapons.ammo == "shaft" or avast.weapons.ammo == "dart" or avast.weapons.ammo == "starshot" or avast.weapons.ammo == "chainshot" then
+      if avast.weapons.tears then
+        send("load "..avast.weapons.weapon.." with "..avast.weapons.ammo.." dipped")
+      else
+        send("load "..avast.weapons.weapon.." with "..avast.weapons.ammo)
+      end
+    else
+      send("load "..avast.weapons.weapon.." with "..avast.weapons.ammo)
+    end
+    if table.contains(avast.skills.weapons, "Loadweapon") then
+      send("fire "..avast.weapons.weapon)
+    else
+      enableTrigger("fire on balance")
+    end
+  end
+  --change ammo somehow
+  if avast.weapons.alternate then
+    local num = table.index_of(avast.weapons.alternate, avast.weapons.ammo)
+    num = num + 1
+    if num &gt; #avast.weapons.alternate then
+      num = 1
+    end
+    avast.weapons.ammo = avast.weapons.alternate[num]
+  end
+else
+  avast.note("&lt;red&gt;WARNING! &lt;white&gt;No ammo has been set (&lt;yellow&gt;avast set ammo \&lt;ammo\&gt;&lt;white&gt;)")
+end
+end
+
+function avast.weapons.weapon_from_ammo(ammo)
+if ammo ~= "flare" then
+  if ammo == "dart" or ammo == "shaft" then
+    avast.weapons.weapon = "ballista"
+  elseif ammo == "hookshot" or ammo == "wardisc" then
+    avast.weapons.weapon = "thrower"
+  elseif ammo == "chainshot" or ammo == "spidershot" or ammo == "starshot" then
+    avast.weapons.weapon = "onager"
+  else
+    avast.note("&lt;red&gt;WARNING! &lt;white&gt;Unable to auto configure weapon with &lt;green&gt;"..ammo)
+  end
+else
+  if not avast.weapons.weapon then
+    avast.weapons.find_weapon()
+    avast.weapons.weapon = avast.weapons.inRoom[1]
+  end
+end
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>Abilities</name>
+			<packageName></packageName>
+			<script>function avast.collect_skills()
+  if gmcp.Char.Skills.List.group == "seafaring" and avast.checking_skills then
+    avast.skills = gmcp.Char.Skills.List.list
+  end
+end
+
+function avast.adjust_skills(skill)
+if not table.contains(avast.skills, skill) then
+  avast.note("Ability not found in Seafaring")
+else
+  local stop = table.index_of(avast.skills, skill)
+  local start = 28
+  while start &gt; stop do
+    table.remove(avast.skills, start)
+    start = start - 1
+  end
+  avast.note("Highest Seafaring ability set to "..skill)
+  avast.checking_skills = false
+  if table.contains(avast.skills, "Commandaura") then
+    avast.skills.command = {"Commandaura"}
+    if table.contains(avast.skills, "Fleetsense") then
+      table.insert(avast.skills.command, "Fleetsense")
+      if table.contains(avast.skills, "Keelhaul") then
+        table.insert(avast.skills.command, "Keelhaul")
+        if table.contains(avast.skills, "Commscreen") then
+          table.insert(avast.skills.command, "Commscreen")
+          if table.contains(avast.skills, "Remote") then
+            table.insert(avast.skills.command, "Remote")
+          end
+        end
+      end
+    end
+  end
+  if table.contains(avast.skills, "Deckhandaura") then
+    avast.skills.deckhand = {"Deckhandaura"}
+    if table.contains(avast.skills, "Salvageops") then
+      table.insert(avast.skills.deckhand, "Salvageops")
+      if table.contains(avast.skills, "Plundering") then
+        table.insert(avast.skills.deckhand, "Plundering")
+        if table.contains(avast.skills, "Bribe") then
+          table.insert(avast.skills.deckhand, "Bribe")
+        end
+      end
+    end
+  end
+  if table.contains(avast.skills, "Helmaura") then
+    avast.skills.helm = {"Helmaura"}
+    if table.contains(avast.skills, "Steadygoing") then
+      table.insert(avast.skills.helm, "Steadygoing")
+      if table.contains(avast.skills, "Emergencies") then
+        table.insert(avast.skills.helm, "Emergencies")
+        if table.contains(avast.skills, "Smartorders") then
+          table.insert(avast.skills.helm, "Smartorders")
+          if table.contains(avast.skills, "Evasives") then
+            table.insert(avast.skills.helm, "Evasives")
+            if table.contains(avast.skills, "Jink") then
+              table.insert(avast.skills.helm, "Jink")
+            end
+          end
+        end
+      end
+    end
+  end
+  if table.contains(avast.skills, "Watchaura") then
+    avast.skills.watch = {"Watchaura"}
+    if table.contains(avast.skills, "Spyglass") then
+      table.insert(avast.skills.watch, "Spyglass")
+      if table.contains(avast.skills, "Anticipate") then
+        table.insert(avast.skills.watch, "Anticipate")
+      end
+    end
+  end
+  if table.contains(avast.skills, "Status") then
+    avast.skills.weapons = {"Status"}
+    if table.contains(avast.skills, "Weaponsaura") then
+      table.insert(avast.skills.weapons, "Weaponsaura")
+      if table.contains(avast.skills, "Loadweapon") then
+        table.insert(avast.skills.weapons, "Loadweapon")
+        if table.contains(avast.skills, "Ammoenhancement") then
+          table.insert(avast.skills.weapons, "Ammoenhancement")
+          if table.contains(avast.skills, "Weaponmaintenance") then
+            table.insert(avast.skills.weapons, "Weaponmaintenance") 
+          end
+        end
+      end
+    end
+  end
+  table.save(getMudletHomeDir() .. "/avast skills.lua", avast.skills)
+end
+end
+
+registerAnonymousEventHandler("gmcp.Char.Skills", "avast.collect_skills")</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>
