@@ -1,0 +1,3434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>command_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Vortex Pulling</name>
+				<script>send("pilot steer e")
+wm.aether.beast = true
+wm.aether.target = matches[2]
+send("shipt target " ..wm.aether.target)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#55aa00</mFgColor>
+				<mBgColor>#555500</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Drawn by the flux of energy, an? \w+ (\w+) suddenly wanders into the nearby area\.$</string>
+					<string>^Drawn by the flux of energy, a six-headed (scyllus) suddenly wanders into the nearby area\.$</string>
+					<string>Drawn by the flux of energy</string>
+					<string>The energy vortex flashes and a vortex karibidean flies out of it.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>2</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Beast dies</name>
+				<script>if wm.aether.autopilot then
+	wm.aether.automove()
+	if PilotSiphon then
+		enableTrigger("Pilot_Siphon")
+	end
+	disableTimer("pilotSiphon_timer")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#55ff00</mFgColor>
+				<mBgColor>#005500</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^An? \w+ \w+ suddenly explodes!$</string>
+					<string>A six-headed scyllus suddenly explodes!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Shockwave released</name>
+				<script>wm.aether.shockwave = false
+if wm.aether.autopilot then
+	wm.aether.automove()
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#00aaff</mFgColor>
+				<mBgColor>#aa0000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^With a ripple, .+ frees itself from its shockwave\.$</string>
+					<string>I am clearing the command chair of all impairments\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>low reserves</name>
+				<script>if tonumber(matches[2]) &lt; 50 then
+	 send("pilot funnel 10 energy from collectors")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Energy Reserves      : (\d+)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>balance</name>
+				<script>if wm.aether.autopilot then
+	wm.aether.automove()
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#6666ff</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The command chair whirrs quietly, ready to be used once again.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Pilot_Auto</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Shockwave entering</name>
+					<script>wm.aether.shockwave = true</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>39</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You are thrust forward as </string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Beast Enter</name>
+					<script>wm.aether.beast = true
+wm.aether.automove()
+if PilotSiphon then
+	disableTrigger("Pilot_Siphon")
+end
+disableTimer("pilotSiphon_timer")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string> enters from the \w+ on the aetherways\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Ship move</name>
+					<script>wm.aether.beast = false
+wm.aether.move = matches[2]</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You steer .+ to the (\w+)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Karibidean dies</name>
+					<script>disableTrigger("Pilot_Auto")
+wm.note("Auto piloting disabled")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>vortex karibidean suddenly explodes!$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Pilot_Siphon</name>
+					<script>enableTimer("pilotSiphon_timer")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>An energy vortex pulsates brightly.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>being shadowed</name>
+				<script>shadowed = true
+wm.note("Being shadowed by "..matches[2]..", maneuver to escape")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^.+ \[(\w+)\] shadows the movements of .+ \[\w+\], preventing her from moving away\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Gnome traders</name>
+				<script>send("pilot steer " ..matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>glides off towards the (\w+).</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>empath_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Slivven check</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand>slvCheck</mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#5500ff</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>I have been infested by an aetheretic slivven!</string>
+					<string>^\(Ship\): \w+ says, "Check\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>EmpathStartUp</name>
+				<script>if matches[2] == "chair" then
+	wm.aether.empath.table.chair[1] = matches[3]
+elseif matches[2] == "orb" then
+	wm.aether.empath.table.orb[1] = matches[3]
+elseif matches[2] == "grid" then
+	wm.aether.empath.table.grid[1] = matches[3]
+elseif matches[2] == "cube" then
+	wm.aether.empath.table.cube[1] = matches[3]
+elseif matches[2] == "turret" then
+	turrCount = turrCount + 1
+	wm.aether.empath.table.turrets[turrCount] = matches[3]
+elseif matches[2] == "collector" then
+	collCount = collCount + 1
+	wm.aether.empath.table.collectors[collCount] = matches[3]
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>1</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^"(\w\D+)(\d+).*+$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>KillEmpathStartUp</name>
+					<script>setTriggerStayOpen("EmpathStartUp", 0)
+disableTrigger("EmpathStartUp")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>39</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>return isPrompt()</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>4</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>GridReady</name>
+				<script>wm.aether.gridheal()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>1</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#6666ff</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>The empathic grid whirrs quietly, ready to be used once again.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Ship Damaged</name>
+				<script>wm.aether.gridheal()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>concussive shock rips through the hull\.$</string>
+					<string>swiftly shears through her hull\.$</string>
+					<string>rips apart her hull\.$</string>
+					<string>shreds deep rends through her hull\.$</string>
+					<string>^Violet sparks fly through the air and </string>
+					<string>^\(Ship\): \w+ says, "Repair\."$</string>
+					<string> cries out as bolts of jagged energy strike out from the ruptured fabric of aetherspace here\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>slivvenCheck</name>
+				<script>slivvenFound = 0</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>100</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>"chair</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>2</integer>
+				</regexCodePropertyList>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>slivven check occupied Module</name>
+					<script>send("shipt slivven detected at "..matches[3].." at "..matches[2])
+slivvenFound = slivvenFound + 1</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^"(\w+)"\s+\D+\d+%\D+damage\s+\[(\w+)\]? PARASITE!$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>slivven check unoccupied</name>
+					<script>send("shipt slivven detected at unoccupied "..matches[2])
+slivvenFound = slivvenFound + 1</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>18</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^"(\w+)"\s+\D+\d+%\D+damage\s+PARASITE!$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Kill slivvenCheck</name>
+					<script>if slivvenFound == 0 then
+	send("shipt no slivven detected")
+else
+	send("shipt "..slivvenFound.." slivven detected.")
+end
+disableTrigger("slivvenCheck")
+setTriggerStayOpen("slivvenCheck", 0)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>return isPrompt()</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>4</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Clarity</name>
+				<script>wm.aether.clarity = true
+send("grid clarity "..wm.aether.empath.table.chair[1])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "EMERGENCY CLARITY\."$</string>
+					<string>^\(Ship\): \w+ says, "Clarity\."$</string>
+					<string>^\(Ship\): \w+ says, "Clear\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>clarity went through</name>
+				<script>wm.aether.clarity = false</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>I am clearing the command chair of all impairments\."$</string>
+					<string>That module needs no clarity.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Clarity_on_death</name>
+				<script>wm.aether.clarity = true
+send("grid clarity "..wm.aether.empath.table.chair[1])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^An? \w+ \w+ suddenly explodes!$</string>
+					<string>A six-headed scyllus suddenly explodes!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>turret_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret_Caller</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Targeting</name>
+					<script>wm.aether.target = matches[2]
+send("turret target creature " ..wm.aether.target)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^\(Ship\): \w+ says, "Target (\w+)\."$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>No Target</name>
+					<script>send("turret target creature " ..wm.aether.target)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>A battle turret is not targeting anything.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret Balance</name>
+				<script>wm.aether.turretBal()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#6666ff</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>A battle turret whirrs quietly, ready to be used once again.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret Exhaustion</name>
+				<script>send("turret fire")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Exhaustion clouds your mind and you fail to properly link to a battle turret.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret Off</name>
+				<script>disableTrigger("turret_module")
+send("shipt My turret is now deactivated")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Turret off\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret Off Targetted</name>
+				<script>if matches[2] == wm.name then
+	send("shipt My turret is now deactivated")
+	disableTrigger("turret_module")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "(\w+), turret off\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Rupture</name>
+				<script>if matches[2] == wm.name then
+	send("turret rupture")	
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "(\w+), rupture\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Shockwave</name>
+				<script>send("turret shockwave")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Shockwave\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>targetted shockwave</name>
+				<script>if matches[2] == wm.name then
+	send("turret shockwave")	
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "(\w+), shockwave\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>flare stuff</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Attack</name>
+					<script>enableTrigger("Action_Repeat")
+send("turret "..position)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "Begin the assault\."</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Action_Repeat</name>
+					<script>if position=="murkle" then
+ send("turret murkle")
+elseif position=="strip" then
+ send("turret strip")
+elseif position=="worble" then
+ send("turret worble")
+elseif position=="clarionblast" then
+ send("turret clarionblast")
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^A battle turret whirrs quietly\, ready to be used once again\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Auto Fire (Normal Gunning - All Turrets)</name>
+					<script>enableTrigger("turret_module")
+enableTrigger("Turret_Auto")
+acsdisplay("AUTOMATIC FIRE - &lt;green&gt;ENABLED")
+send ("turret fire")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "Open fire\!"</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Stop Auto Fire</name>
+					<script>disableTrigger("turret_module")
+disableTrigger("Turret_Auto")
+acsdisplay("AUTOMATIC FIRE - &lt;red&gt;DISABLED")
+</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "Cease fire\!"</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Set Position</name>
+					<script>if matches[3]== wm.name then
+ position=matches[4]
+ acsdisplay("Position set to - "..matches[4]..".")
+ send("shipt Turret set to "..matches[4])
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), prepare to (\w+)\."</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Murkle</name>
+					<script>if matches[3]== wm.name then
+ send("turret murkle")
+end
+send("shipt Their "..moduletar.." has been murkled!")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), murkle\."</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Wurble</name>
+					<script>if matches[3]== wm.name then
+ send("turret worble")
+end
+send("shipt Their "..moduletar.." has been worbled!")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), worble\."</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>ClarionBlast</name>
+					<script>if matches[3]== wm.name then
+ send("turret clarionblast")
+end
+send("shipt Their "..moduletar.." has been BLASTED!")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), clarionblast\."</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Strip</name>
+					<script>if matches[3]== wm.name then
+ send("turret strip")
+end
+send ("shipt Their shields are down!")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), strip\."</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Target Ship</name>
+					<script>shiptar=matches[3]
+acsdisplay("TARGETING SHIP - "..matches[3]..".")
+send("turret target ship "..shiptar)
+send("shipt Target acquired, sights locked on "..shiptar.."!")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^\(Ship\): (\w+) says, \"Prepare to engage - (\w+).\"$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Target Module</name>
+					<script>moduletar=matches[3]
+acsdisplay("TARGETING MODULE - "..moduletar..".")
+send("Turret target module "..moduletar)
+send("shipt Target acquired, sights locked on their "..moduletar.."!")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^\(Ship\): (\w+) says, \"Target their (\w+)\!"$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Targeted Module Target</name>
+					<script>if matches[3]== wm.name then
+ moduletarget=string.upper(matches[4])
+ send("turret target module "..matches[4])
+ acsdisplay("TARGETING MODULE - &lt;red&gt;"..moduletarget)
+ send("shipt My sights are locked on the "..moduletarget..", captain!")
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), set your sights on their (\w+)\!"</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Bombard</name>
+					<script>if matches[3]== wm.name then
+ send("shipt Bombard sequence initiated!")
+ send("turret bombard")
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>\(Ship\)\: (\w+) says, "(\w+), BOMBARD\!"</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>turret target</name>
+				<script>wm.aether.turret.target = string.lower(matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^You tune the weapon module to target .+ \[(\w+)\]\.$</string>
+					<string>^You tune the weapon module to target a six-headed (scyllus)\.$</string>
+					<string>^You tune the weapon module to target an? \w+ (\w+)\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret_Auto</name>
+				<script>for creature in pairs(wm.aether.turret.list) do
+   send("turret target creature "..wm.aether.turret.list[creature])
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Drawn by the flux of energy,</string>
+					<string>The energy vortex flashes and a vortex karibidean flies out of it.</string>
+					<string>A battle turret is not targeting anything.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>2</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>collector_module</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Collector Exhaustion</name>
+				<script>send("shipt I am suffering from exhaustion")
+send("siphon vortex")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Exhaustion clouds your mind and you fail to properly link to an energy collector.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>CallSiphon</name>
+				<script>send ("siphon vortex")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Siphon\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>AutoSiphon</name>
+				<script>if wm.aether.count &lt; wm.aether.thres then
+	send("siphon vortex")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#000280</mFgColor>
+				<mBgColor>#00be02</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>An energy vortex pulsates brightly.</string>
+					<string>An energy collector whirrs quietly, ready to be used once again.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Collector Off Targetted</name>
+				<script>if matches[2] == wm.name then
+	send("shipt My collector is deactivated")
+	disableTrigger("collector_module")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "(\w+), siphon off\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Collector Off</name>
+				<script>send("shipt My collector is deactivated")
+disableTrigger("collector_module")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Siphon off\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>CollectorFull</name>
+				<script>send("shipt my collector is full")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>18</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>An energy collector is filled to capacity.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Siphon_Announce</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>3</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Siphoning Vortex</name>
+					<script>send("shipt Siphoned vortex. My collector is now at " ..matches[2].." energy.")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You siphon some energy from the energy vortex into an energy collector, bringing it to a total of (\d+) energy\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>No Vortex</name>
+					<script>send("shipt no vortex")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>There is no energy vortex to siphon energy from.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Siphon Announce On</name>
+				<script>enableTrigger("Siphon_Announce")
+send("shipt I will now announce my siphon attempts")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): (\w+) says, "Announce on\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Siphon Announce Off</name>
+				<script>disableTrigger("Siphon_Announce")
+send("shipt I will not announce my siphon attempts")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>3</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): (\w+) says, "Announce off\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Aether Environments</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Void</name>
+				<script>wm.aether.turret.makeList("void")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Floating in aetherspace near the Void.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Nil</name>
+				<script>wm.aether.turret.makeList("nilspace")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Trespassing in Nil Space.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Celestial</name>
+				<script>wm.aether.turret.makeList("celestial")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Cruising in the Celestial Realms.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Ethereal</name>
+				<script>wm.aether.turret.makeList("ethereal")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Meandering the ethereal.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Storms</name>
+				<script>wm.aether.turret.makeList("storms")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Fighting the temporal storms.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Slipstream</name>
+				<script>wm.aether.turret.makeList("slipstream")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Sliding through the slipstream.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Flux</name>
+				<script>wm.aether.turret.makeList("flux")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Drifting upon the aether flux.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Elemental</name>
+				<script>wm.aether.turret.makeList("elemental")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Navigating the water plane.</string>
+					<string>Navigating the earth plane.</string>
+					<string>Navigating the fire plane.</string>
+					<string>Navigating the air plane.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Astral</name>
+				<script>wm.aether.turret.makeList("astral")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Hanging in astral space.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Godrealm</name>
+				<script>wm.aether.turret.makeList("godrealm")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>39</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Blown about by argent winds.</string>
+					<string>A burgeoning rift.</string>
+					<string>Amidst violent scenes.</string>
+					<string>Within a spiraling nebula.</string>
+					<string>Through a seething maelstrom.</string>
+					<string>A squall of crimson clouds.</string>
+					<string>Soaring through golden clouds.</string>
+					<string>Diverging emerald trails.</string>
+					<string>Within a twilight maelstrom.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Continuum</name>
+				<script>wm.aether.turret.makeList("continuum")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Passing through burning clouds. </string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Vortex</name>
+				<script>wm.aether.turret.makeList("vortex")
+disableTrigger("Aether Environments")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Amid pulsating storms of light.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Aether_Gags</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Move_Gags</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>3</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Shockwave Stuff</name>
+					<script>deleteLine()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>shudders violently, then comes to a complete stop\.$</string>
+						<string>^You are thrust forward as </string>
+						<string>^With a ripple,</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Ship Moving</name>
+					<script>deleteLine()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>sails to the (\w+).</string>
+						<string>There is a barely perceptible shift as</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret_Gags</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Turret Miss</name>
+					<script>deleteLineP()
+cecho("&lt;red&gt;M")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^The floor shakes as \w+ fires astray\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Turret gag</name>
+					<script>deleteLineP()
+cecho("&lt;green&gt;H")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^The floor shakes as \w+ fires a blast that slams into a</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Off balance/No target</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>A battle turret is not targeting anything.</string>
+						<string>A battle turret is not yet ready to be used again.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Criticals</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You have scored a</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Targetting</name>
+					<script>deleteLineP()
+cecho("&lt;orange&gt;T")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You tune the weapon module to target </string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>turret balance</name>
+					<script>deleteLineP()
+cecho("&lt;blue&gt;B")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>39</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>A battle turret whirrs quietly, ready to be used once again.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Self Firing</name>
+					<script>deleteLineP()
+cecho("&lt;yellow&gt;F")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>The floor shakes as you </string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>No Creature Close</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>No such creature is close enough for a battle turret to get a targeting lock.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Beast exploding</name>
+					<script>deleteLineP()
+cecho("D")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>suddenly explodes!$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Empath_Gags</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Empath healing</name>
+					<script>deleteLineP()
+</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>39</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Bright tendrils of energy pulsate</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Module Fully Repaired</name>
+					<script>deleteLineP()
+</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>That module is already in full repair.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Empath Balance</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>The empathic grid is not yet ready to be used again.</string>
+						<string>^.+ is unable to do that while docked\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Beast_Gags</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>3</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Vortex Pulled Gag</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>99</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Drawn by the flux of energy</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Beast Dead</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>suddenly explodes!$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Beast Entering</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>enters from the \w+ on the aetherways.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Move_Gags</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>3</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Ship Moving</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>sails to the \w+\.$</string>
+						<string>There is a barely perceptible shift as</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Shockwave Stuff</name>
+					<script>deleteLineP()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>3</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>shudders violently, then comes to a complete stop\.$</string>
+						<string>You are thrust forward as </string>
+						<string>With a ripple,</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+		</TriggerGroup>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Activate/Deactivate calls</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret On Targetted</name>
+				<script>if matches[2] == wm.name then
+	if wm.aether.module == "turret" then
+		enableTrigger("turret_module")
+		send("shipt My turret is now activated")
+	else
+		send("shipt I am not operating a turret")
+	end
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "(\w+), turret on\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Turret On</name>
+				<script>if wm.aether.module == "turret" then
+	send("shipt My turret is now activated")
+	enableTrigger("turret_module")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Turret on\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Collector On Targetted</name>
+				<script>if matches[2] == wm.name then
+	if wm.aether.module == "collector" then
+		enableTrigger("collector_module")
+		send("shipt My collector is activated")
+		send("ship look")
+	else
+		send("shipt I am not operating a collector")
+	end
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "(\w+), siphon on\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Collector On</name>
+				<script>if wm.aether.module == "collector" then
+	send("shipt My collector is activated")
+	enableTrigger("collector_module")
+	send("ship look")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Siphon on\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Siphon Announce On</name>
+				<script>enableTrigger("Siphon_Announce")
+send("Shipt I will now announce my siphon attempts")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>99</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Announce on\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Siphon Announce Off</name>
+				<script>disableTrigger("Siphon_Announce")
+send("Shipt I will no longer announce my siphon attempts")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>3</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^\(Ship\): \w+ says, "Announce off\."$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>beast count</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>new beast</name>
+				<script>wm.aether.count = wm.aether.count + 1
+cecho("beastCount", "\n&lt;green&gt;Beasts following: " ..wm.aether.count)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Drawn by the flux of energy, an? \w+ \w+ suddenly wanders into the nearby area\.$</string>
+					<string>Drawn by the flux of energy, a six-headed scyllus suddenly wanders into the nearby area.</string>
+					<string>The energy vortex flashes and a vortex karibidean flies out of it.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>3</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>dead beast</name>
+				<script>if wm.aether.count &gt; 0 then
+	wm.aether.count = wm.aether.count - 1
+end
+wm.aether.beast = false
+send("ship look")
+cecho("beastCount", "&lt;green&gt;\nBeasts following: " ..wm.aether.count)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^An? \w+ \w+ suddenly explodes!$</string>
+					<string>A six-headed scyllus suddenly explodes!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>slivven dead</name>
+			<script>send("shipt slivven exterminated"..(matches[2] or "."))</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>99</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>You have slain an aetheretic slivven.</string>
+				<string>^An aetheretic slivven has been slain( by \w+)\.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Entering/Exiting</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>locking in</name>
+				<script>wm.aether.lockin(matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^You step up to \w+ (\w+ \w+), locking yourself into the module and linking your mind to the controls of the ship\. After a moment, you begin to sense your command of the module in your own brain\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>unlocking</name>
+				<script>wm.aether.unlock(matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^With a long, slow blink, you allow your mind to drift free from the ship, and release your lock on the command of \w+ (\w+ \w+)\.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<TimerPackage>
+		<TimerGroup isActive="yes" isFolder="yes" isTempTimer="no" isOffsetTimer="no">
+			<name>Windmills Aethercraft</name>
+			<script></script>
+			<command></command>
+			<packageName>Windmills Aethercraft</packageName>
+			<time></time>
+			<Timer isActive="no" isFolder="no" isTempTimer="no" isOffsetTimer="no">
+				<name>pilotSiphon_timer</name>
+				<script>if wm.count == 0 then
+	send("shipt siphon")
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<time>00:00:02.000</time>
+			</Timer>
+		</TimerGroup>
+	</TimerPackage>
+	<AliasPackage>
+		<AliasGroup isActive="no" isFolder="yes">
+			<name>command_module</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>pilot steering</name>
+				<script>if shadowed then
+	send("pilot maneuver "..matches[2])
+else
+	send("pilot steer " ..matches[2], false)
+end
+wm.aether.autopilot = false
+disableTrigger("Pilot_Auto")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(n|ne|e|se|s|sw|w|nw)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>pilot scoop</name>
+				<script></script>
+				<command>pilot scoop</command>
+				<packageName></packageName>
+				<regex>^ps$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>pilot transverse</name>
+				<script></script>
+				<command>pilot transverse</command>
+				<packageName></packageName>
+				<regex>^tra$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>pilot panchor</name>
+				<script></script>
+				<command>pilot anchor</command>
+				<packageName></packageName>
+				<regex>^pa$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Launch</name>
+				<script></script>
+				<command>pilot launch</command>
+				<packageName></packageName>
+				<regex>^launch$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Dock</name>
+				<script></script>
+				<command>pilot dock</command>
+				<packageName></packageName>
+				<regex>^dock$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Forcefield</name>
+				<script></script>
+				<command>pilot forcefield</command>
+				<packageName></packageName>
+				<regex>^force$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Ship look</name>
+				<script></script>
+				<command>ship look</command>
+				<packageName></packageName>
+				<regex>^l$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>runsilent on</name>
+				<script></script>
+				<command>pilot silentrun start</command>
+				<packageName></packageName>
+				<regex>^steon$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>runsilent off</name>
+				<script></script>
+				<command>pilot silentrun stop</command>
+				<packageName></packageName>
+				<regex>^steoff$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>farharizon on</name>
+				<script></script>
+				<command>pilot farhorizon start</command>
+				<packageName></packageName>
+				<regex>^faron$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>farharizon off</name>
+				<script></script>
+				<command>pilot farhorizon stop</command>
+				<packageName></packageName>
+				<regex>^faroff$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>call siphon</name>
+				<script></script>
+				<command>shipt Siphon</command>
+				<packageName></packageName>
+				<regex>^cs$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Clarity</name>
+				<script></script>
+				<command>shipt clarity</command>
+				<packageName></packageName>
+				<regex>^cc$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Emergency clarity</name>
+				<script></script>
+				<command>shipt EMERGENCY CLARITY</command>
+				<packageName></packageName>
+				<regex>^ccc$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>gliding</name>
+				<script>if shadowed then
+	send("pilot maneuver "..matches[2])
+else
+	send("pilot glide " ..matches[2], false)
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^g (\w+)$</regex>
+			</Alias>
+			<AliasGroup isActive="no" isFolder="yes">
+				<name>Auto piloting</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>gotest</name>
+					<script>wm.aether.automove()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^gotest$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>On</name>
+					<script>enableTrigger("Pilot_Auto")
+wm.aether.count = 0
+wm.aether.move = "southwest"
+wm.aether.autopilot = true
+if PilotSiphon then
+	enableTrigger("Pilot_Siphon")
+end
+wm.note("Autopiloter engaged. 'Beast here' is &lt;red&gt;" ..tostring(wm.aether.beast).. "&lt;green&gt;. 'In shockwave' set to &lt;red&gt;" ..tostring(wm.aether.shockwave))</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^piloton$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Off</name>
+					<script>disableTrigger("Pilot_Auto")
+wm.aether.count = 0
+wm.aether.move = "southwest"
+wm.aether.autopilot = false
+disableTrigger("Pilot_Siphon")
+wm.note("Autopiloter disengaged. 'Beast here' is &lt;red&gt;" ..tostring(wm.aether.beast).. "&lt;green&gt;. 'In shockwave' set to &lt;red&gt; " ..tostring(wm.aether.shockwave))</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^pilotoff$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>PilotSiphon</name>
+					<script>--Currently, This only works if you are using the autopiloter also
+if matches[2] == "on" then
+	PilotSiphon = true
+	enableTrigger("Pilot_Siphon")
+	wm.note("Pilot Siphoning set to &lt;red&gt;" ..tostring(PilotSiphon).. "&lt;green&gt;. You will automatically call siphon when ontop of a vortex until a beast is summoned.")
+elseif matches[2] == "off" then
+	PilotSiphon = false
+	disableTrigger("Pilot_Siphon")
+	wm.note("Pilot Siphoning set to &lt;red&gt;" ..tostring(PilotSiphon))
+end
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^psiphon(on|off)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>AutoFlight_Movement</name>
+					<script>if	wm.aether.autopilot then
+	wm.aether.automove()
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^go$</regex>
+				</Alias>
+			</AliasGroup>
+		</AliasGroup>
+		<AliasGroup isActive="no" isFolder="yes">
+			<name>empath_module</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>empathHealAll</name>
+				<script>wm.aether.gridheal()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^rep$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>slivvenCheck</name>
+				<script>enableTrigger("slivvenCheck")
+slivvenFound = 0
+send("grid modules")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^slvCheck$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>EmpathSetUp</name>
+				<script>enableTrigger("EmpathStartUp")
+wm.aether.empath.table = {chair = {},grid = {},collectors = {},orb = {},turrets = {},cube = {},}
+collCount = 0
+turrCount = 0
+send("grid modules")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^gridsetup$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>grid modules</name>
+				<script></script>
+				<command>grid modules</command>
+				<packageName></packageName>
+				<regex>^gm$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>trade</name>
+				<script></script>
+				<command>grid trade wares</command>
+				<packageName></packageName>
+				<regex>^trd$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>clarity on death</name>
+				<script>if matches[2] == "on" then
+	triggerEnable("Clarity_on_death")
+else
+	triggerDisable("Clarity_on_death")
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^cod (on|off)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Clarity</name>
+				<script>send("grid clarity "..wm.aether.empath.table.chair[1])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(clarity|cc)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>gridbalanceon</name>
+				<script>enableTrigger("GridReady")
+wm.note("You have enabled grid repairing on balance. To disable type &lt;red&gt;gridbalanceoff&lt;green&gt;.")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^gridbalanceon$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>gridbalanceoff</name>
+				<script>disableTrigger("GridReady")
+wm.note("You have disabled grid repairing on balance. To renable type &lt;red&gt;gridbalanceon&lt;green&gt;.")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^gridbalanceoff$</regex>
+			</Alias>
+		</AliasGroup>
+		<AliasGroup isActive="no" isFolder="yes">
+			<name>turret_module</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>Automatic Environment Capture</name>
+				<script>enableTrigger("Aether Environments")
+send("ship look")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^ecapture$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Aetherenviro setter</name>
+				<script>wm.aether.turret.makeList(string.lower(matches[2]))</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^eset (\w+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Turretcall enable</name>
+				<script>disableTrigger("Turret_Auto")
+enableTrigger("Turret_Caller")
+wm.note("Target acquisition by pilot command enabled")
+send("shipt Turret enabled. Target acquisition method: Calling")
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^turretcall$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Turretauto enable</name>
+				<script>disableTrigger("Turret_Caller")
+enableTrigger("Turret_Auto")
+wm.note("Automatic target acquisition enabled")
+tempTimer(1.5, [[wm.note("Environment parameter required")]])
+tempTimer(2.5, [[wm.note("Set environment now (&lt;yellow&gt;eset &lt;environment&gt;&lt;white&gt;) or upon arrival at hunting grounds (&lt;yellow&gt;ecapture&lt;white&gt;)")]])
+tempTimer(4, [[send("shipt Turret enabled. Target acquisition method: Automatic")]])
+tempTimer(4, [[send("turret fire")]])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^turretauto$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Turretoff</name>
+				<script>disableTrigger("turret_module")
+send("shipt My turret is now deactivated")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^turretoff$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Turreton</name>
+				<script>enableTrigger("turret_module")
+send("shipt My turret is activated")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^turreton$</regex>
+			</Alias>
+		</AliasGroup>
+		<AliasGroup isActive="no" isFolder="yes">
+			<name>collector_module</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>siphonon</name>
+				<script>enableTrigger("collector_module")
+send("shipt My collector is activated")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^siphonon$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>siphonoff</name>
+				<script>disableTrigger("collector_module")
+send("shipt My collector is deactivated")
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^siphonoff$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Beast Threshold</name>
+				<script>wm.aether.thres = tonumber(matches[2])
+wm.note("Beast threshold set to &lt;yellow&gt;" ..wm.aether.thres)
+tempTimer(1, [[wm.note("Automatic siphoning active while fewer than &lt;yellow&gt;"..wm.aether.thres.." &lt;white&gt;beasts in area")]])
+tempTimer(1.5, [[send("shipt my siphoning threshold is set to " ..wm.aether.thres.." beasts")]])
+tempTimer(1.5, [[send("ship look")]])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^thres (\d+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>siphonauto enable</name>
+				<script>enableTrigger("collector_module")
+disableTrigger("CallSiphon")
+enableTrigger("AutoSiphon")
+wm.note("Automatic siphoning enabled ")
+tempTimer(.5, [[send("shipt automated siphoning enabled")]])
+if wm.aether.thres then
+	tempTimer(1.5, [[wm.note("Beast threshold set to "..wm.aether.thres.." (&lt;yellow&gt;thres &lt;#&gt;&lt;white&gt;)")]])
+	tempTimer(2.5, [[wm.note("Automatic siphoning active while fewer than &lt;yellow&gt;"..wm.aether.thres.." &lt;white&gt;beasts in area ")]])
+	tempTimer(3, [[send("shipt my siphoning threshold is set to " ..wm.aether.thres.." beasts")]])
+	tempTimer(3, [[send("ship look")]])
+else
+	tempTimer(1.5, [[wm.note("Threshold paramater required")]])
+	tempTimer(2.5, [[wm.note("Automatically siphon until threshold is reached (&lt;yellow&gt;thres &lt;#&gt;&lt;white&gt;)")]])
+end
+wm.aether.count = 0
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^siphonauto$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>siphoncall enable</name>
+				<script>enableTrigger("collector_module")
+disableTrigger("AutoSiphon")
+enableTrigger("CallSiphon")
+wm.note("Siphon attempt by pilot command enabled ")
+tempTimer(1, [[send("shipt call-based siphoning enabled")]])
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^siphoncall$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Siphon Announce</name>
+				<script>enableTrigger("Siphon_Announce")
+send("Shipt I will now announce my siphon attempts")
+wm.note("You will now announce your siphoning, to turn this off type &lt;red&gt;siphonsilent.")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^siphonannounce$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Siphon Silent</name>
+				<script>disableTrigger("Siphon_Announce")
+send("Shipt I will not announce my siphon attempts")
+wm.note("vocal accompaniment for siphon attempts disabled &lt;red&gt;siphonannounce")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^siphonsilent$</regex>
+			</Alias>
+		</AliasGroup>
+		<Alias isActive="yes" isFolder="no">
+			<name>Huntoff</name>
+			<script>disableTrigger("AutoSiphon")
+disableTrigger("CallSiphon")
+disableTrigger("Turret_Caller")
+disableTrigger("Turret_Auto")
+disableTrigger("turret_module")
+disableAlias("turret_module")
+disableTrigger("collector_module")
+disableAlias("collector_module")
+disableTrigger("empath_module")
+disableAlias("empath_module")
+disableAlias("command_module")
+disableTrigger("command_module")
+disableTrigger("Aether_Gags")
+wm.aether.count = 0
+wm.aether.module = nil
+wm.aether.thres = nil
+wm.note("All aetherhunt module functions disabled")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^huntoff$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>aetherbeastcount</name>
+			<script>wm.aether.count = tonumber(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^abc (\d+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>version</name>
+			<script>wm.note("You are running version " ..wm.aether.version.. " of Morbo's Aethercraft Module")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^wm ver(?:sion|)$</regex>
+		</Alias>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>Gags</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>gag stuff</name>
+				<script>if matches[2] == "all" then
+	enableTrigger("Turret_Gags")
+	enableTrigger("Empath_Gags")
+	enableTrigger("Beast_Gags")
+	enableTrigger("Move_Gags")
+elseif matches[2] == "turret" then
+	enableTrigger("Turret_Gags")
+elseif matches[2] == "empath" then
+	enableTrigger("Empath_Gags")
+elseif matches[2] == "beast" then
+	enableTrigger("Beast_Gags")
+elseif matches[2] == "move" then
+	enableTrigger("Move_Gags")
+end
+local string = ""
+local comma = false
+if isActive("Turret_Gags","trigger") == 1 then
+	string = string.."&lt;red&gt;turret"
+	comma = true
+end
+if isActive("Empath_Gags","trigger") == 1 then
+	if comma then
+		string = string.."&lt;green&gt;, "
+		comma = false
+	end
+	string = string.."&lt;red&gt;empath"
+	comma = true
+end
+if isActive("Beast_Gags","trigger") == 1 then
+	if comma then
+		string = string.."&lt;green&gt;, "
+		comma = false
+	end
+	string = string.."&lt;red&gt;beast"
+	comma = true
+end
+if isActive("Move_Gags","trigger") == 1 then
+	if comma then
+		string = string.."&lt;green&gt;, "
+		comma = false
+	end
+	string = string.."&lt;red&gt;move"
+	comma = true
+end
+
+wm.note("You are gagging "..string.."&lt;green&gt;. To ungag, you will need to &lt;red&gt;ungagall &lt;green&gt;or&lt;red&gt; ungag(module)")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^gag(\w+)?$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>ungag stuff</name>
+				<script>if matches[2] == "all" then
+	disableTrigger("Turret_Gags")
+	disableTrigger("Empath_Gags")
+	disableTrigger("Beast_Gags")
+	disableTrigger("Move_Gags")
+elseif matches[2] == "turret" then
+	disableTrigger("Turret_Gags")
+elseif matches[2] == "empath" then
+	disableTrigger("Empath_Gags")
+elseif matches[2] == "beast" then
+	disableTrigger("Beast_Gags")
+elseif matches[2] == "move" then
+	disableTrigger("Move_Gags")
+else
+	wm.note("Invalid gag type. &lt;green&gt;Choices are &lt;red&gt;turret&lt;green&gt;, &lt;red&gt;empath&lt;green&gt;, &lt;red&gt;beast&lt;green&gt;, and &lt;red&gt;move&lt;green&gt;.", "red")
+end
+
+local string = ""
+local comma = false
+if isActive("Turret_Gags","trigger") == 1 then
+	string = string.."&lt;red&gt;turret"
+	comma = true
+end
+if isActive("Empath_Gags","trigger") == 1 then
+	if comma then
+		string = string.."&lt;green&gt;, "
+		comma = false
+	end
+	string = string.."&lt;red&gt;empath"
+	comma = true
+end
+if isActive("Beast_Gags","trigger") == 1 then
+	if comma then
+		string = string.."&lt;green&gt;, "
+		comma = false
+	end
+	string = string.."&lt;red&gt;beast"
+	comma = true
+end
+if isActive("Move_Gags","trigger") == 1 then
+	if comma then
+		string = string.."&lt;green&gt;, "
+		comma = false
+	end
+	string = string.."&lt;red&gt;move"
+	comma = true
+end
+
+wm.note("You are gagging "..string.."&lt;green&gt;. To gag other modules, you will need to &lt;red&gt;gagall &lt;green&gt;or&lt;red&gt; gag(module)")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^ungag(\w+)$</regex>
+			</Alias>
+		</AliasGroup>
+		<Alias isActive="yes" isFolder="no">
+			<name>catch all setup alias?</name>
+			<script>if not wm.aether.module then
+	wm.note("No active module connection")
+	tempTimer(.5, [[wm.note("Please run command again after locking in")]])
+else
+	wm.aether[wm.aether.module]["setup"]()
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^wm setup$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>Variables</name>
+			<packageName></packageName>
+			<script>if not wm then wm = {} end
+if not wm.aether then wm.aether = {empath = {}, turret = {}, command = {}, collector = {},} end
+wm.aether.version = "3.0"
+wm.aether.beast = false
+wm.name = "Tulemrah"
+wm.aether.haveClarity = true
+
+function wm.note(message, color)
+	if not color then color = "white" end
+	cecho("\n&lt;yellow&gt;(&lt;white&gt;Windmills&lt;yellow&gt;) &lt;"..color.."&gt;"..message)
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>Auto Pilot</name>
+			<packageName></packageName>
+			<script>function wm.aether.automove()
+if not wm.aether.shockwave and wm.aether.beast then
+	if wm.aether.count &gt; 0 then
+		if wm.aether.move == "southwest" then
+			send("pilot steer east")
+		elseif wm.aether.move == "south" then
+			send("pilot steer north")
+		elseif wm.aether.move == "east" then
+			send("pilot steer north")
+		elseif wm.aether.move == "north" then
+			send("pilot steer south")
+		elseif wm.aether.move == "west" then
+			send("pilot steer east")
+		end
+	elseif wm.count == 0 then
+		if wm.aether.move == "southwest" then
+			send("pilot steer west")
+		elseif wm.aether.move == "south" then
+			send("pilot steer west")
+		elseif wm.aether.move == "east" then
+			send("pilot steer west")
+		elseif wm.aether.move == "north" then
+			send("pilot steer southwest")
+		elseif wm.aether.move == "west" then
+			send("pilot steer west")
+		end
+	end
+end
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>Grid Heal</name>
+			<packageName></packageName>
+			<script>function wm.aether.gridheal()
+
+if wm.aether.clarity and wm.aether.haveClarity then
+	send("grid clarity "..wm.aether.empath.table.chair[1])
+end
+	send("grid repair hull", false)
+	send("grid repair module "..wm.aether.empath.table.grid[1], false)
+	send("grid repair module "..wm.aether.empath.table.chair[1], false)
+	for key in pairs(wm.aether.empath.table.turrets) do
+		send("grid repair module "..wm.aether.empath.table.turrets[key], false)
+	end
+	if #wm.aether.empath.table.cube &gt; 0 then
+		send("grid repair module "..wm.aether.empath.table.cube[1], false)
+	end
+	if #wm.aether.empath.table.collectors &gt; 0 then
+		for key in pairs(wm.aether.empath.table.collectors) do
+			send("grid repair module "..wm.aether.empath.table.collectors[key], false)
+		end
+	end
+	if #wm.aether.empath.table.orb &gt; 0 then
+		send("grid repair module "..wm.aether.empath.table.orb[1], false)
+	end
+	if #aether.donext &gt; 0 then
+		send(aether.donext[1])
+		table.remove(aether.donext, 1)
+	end
+
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>turret stuff</name>
+			<packageName></packageName>
+			<script>function wm.aether.turretBal()
+
+if wm.aether.target ~= wm.aether.turret.target then
+	send("turret target creature " ..wm.aether.target)
+else
+	send("turret fire")
+end
+
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>module lockin</name>
+			<packageName></packageName>
+			<script>function wm.aether.lockin(mod)
+if mod == "command chair" then
+	mod = "command"
+	wm.note("Connection to command module established")
+	tempTimer(1, [[wm.note("Is there a setup protocol? (&lt;yellow&gt;wm setup&lt;white&gt;)")]])
+elseif mod == "empathic grid" then
+	wm.note("Connection to empath module established")
+	if wm.aether.module ~= "empath" then
+		tempTimer(1, [[wm.note("Please run setup protocol (&lt;yellow&gt;wm setup&lt;white&gt;)")]])
+	end
+	mod = "empath"
+elseif mod == "battle turret" then
+	wm.aether.turret = wm.aether.turret or {}
+	wm.note("Connection to turret module established")
+	if wm.aether.module ~= "turret" then
+		tempTimer(1, [[wm.note("Please run setup protocol (&lt;yellow&gt;wm setup&lt;white&gt;)")]])
+	end
+	mod = "turret"
+elseif mod == "energy collector" then
+	wm.note("Connection to collector module established")
+	if wm.aether.module ~= "collector" then
+		tempTimer(1, [[wm.note("Wait until arrival at hunting grounds to run setup protocol (&lt;yellow&gt;wm setup&lt;white&gt;)")]])
+	end
+	mod = "collector"
+
+--When your captain is ready to begin siphoning type either &lt;red&gt;'siphoncall' &lt;green&gt;or &lt;red&gt;'siphonauto'")
+else
+	wm.note("Connection to unknown module failed", "red")
+end
+	wm.aether.module = module
+	enableAlias(module.."_module")
+	enableTrigger(module.."_module")
+
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>target list</name>
+			<packageName></packageName>
+			<script>function wm.aether.turret.makeList(enviro)
+
+local types = {"void","ethereal","flux","storms","slipstream","celestial","nilspace","elemental","astral","godrealm",}
+
+if table.contains(types, enviro) then
+	if enviro == "void" then
+		wm.aether.turret.list = {"scyllus", "dragon", "karibidean"}
+	elseif enviro == "ethereal" then
+		wm.aether.turret.list = {"gargantuan", "karibidean"}
+	elseif enviro == "flux" then
+		wm.aether.turret.list = {"pyrinnes", "grogogs", "serpent", "karibidean"}
+	elseif enviro == "storms" then
+		wm.aether.turret.list = {"hydrian", "cloier", "cloud", "karibidean"}
+	elseif enviro == "slipstream" then
+		wm.aether.turret.list = {"gruul", "lixin", "slanikk", "karibidean"}
+	elseif enviro == "celestial" then
+		wm.aether.turret.list = {"starbeast", "karibidean"}
+	elseif enviro == "nilspace" then
+		wm.aether.turret.list = {"shadow", "karibidean"}
+	elseif enviro == "elemental" then
+		wm.aether.turret.list = {"elemental", "karibidean"}
+	elseif enviro == "astral" then
+		wm.aether.turret.list= {"tendril", "karibidean"}
+	elseif enviro == "godrealm" then
+		wm.aether.turret.list= {"aebyr", "viaead", "guardian", "mannarast", "aesper", "molutoque", "spirit", "hamsa", "ufanq", "karibidean"}
+	end
+	wm.note("Environment set to &lt;yellow&gt;" ..enviro)
+else
+	wm.note("ERROR!!! Environment not properly set", "red")
+	tempTimer(1, [[wm.note("Choices are &lt;yellow&gt;]]..table.concat(types,"&lt;white&gt;, &lt;yellow&gt;")..[[")]])
+end
+
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>module unlock</name>
+			<packageName></packageName>
+			<script>function wm.aether.unlock(module)
+
+if module == "command chair" then
+	module = "command"
+	wm.note("Connection to command module lost")
+elseif module == "empathic grid" then
+	module = "empath"
+	wm.note("Connection to empath module lost")
+elseif module == "battle turret" then
+	wm.note("Connection to turret module lost")
+elseif module == "energy collector" then
+	wm.note("Connection to collector module lost")
+else
+	wm.note("Disengaged from unknown module")
+end
+tempTimer(1.5, [[wm.note("Please terminate all module functions on completion of hunt (&lt;yellow&gt;huntoff&lt;white&gt;)")]])
+	disableTrigger("Aether_Gags")
+	disableAlias(module.."_module")
+	disableTrigger(module.."_module")
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>DeleteLineP</name>
+			<packageName></packageName>
+			<script>function deleteLineP()
+   deleteLine()
+   tempLineTrigger(1,1,[[
+if string.find(line, "%dhull, .*") then
+   deleteLine()
+end
+]])
+end</script>
+			<eventHandlerList />
+		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>setup scripts</name>
+			<packageName></packageName>
+			<script>function wm.aether.command.setup()
+	wm.note("Running command module initialization")
+	tempTimer(1, [[wm.note("Script not completed")]])
+end
+
+function wm.aether.empath.setup()
+	wm.note("Running empath module initialization (&lt;yellow&gt;gridsetup&lt;white&gt;)")
+	tempTimer(.5, [[expandAlias("gridsetup", false)]])
+	tempTimer(1.5, [[wm.note("Checking for slivvens (&lt;yellow&gt;slvCheck&lt;white&gt;)")]])
+	tempTimer(2, [[expandAlias("slvCheck", false)]])
+	if isActive("GridReady","trigger") == 1 then
+		tempTimer(3, [[wm.note("Autonomous grid healing enabled (&lt;yellow&gt;gridbalanceon&lt;white&gt;)")]])
+	else
+		tempTimer(3, [[wm.note("Autonomous grid healing disabled (&lt;yellow&gt;gridbalanceoff&lt;white&gt;)")]])
+	end
+	tempTimer(4.5, [[wm.note("Manual grid healing enabled (&lt;yellow&gt;rep&lt;white&gt;)")]])
+end
+
+function wm.aether.turret.setup()
+	wm.note("Running turret module initialization")
+	if isActive("Turret_Caller", "trigger") == 1 then
+		tempTimer(1, [[wm.note("Target acquisition by pilot command enabled (&lt;yellow&gt;turretcall&lt;white&gt;)")]])
+	end
+	if isActive("Turret_Auto", "trigger") == 1 then
+		tempTimer(1, [[wm.note("Automatic target acquisition enabled (&lt;yellow&gt;turretauto&lt;white&gt;)")]])
+	end
+	if isActive("Turret_Caller", "trigger") == 1 and isActive("Turret_Auto", "trigger") == 1 then
+		tempTimer(1.5, [[wm.note("Conflicting target acquisition methods active, please rectify", "red")]])
+	end
+	if isActive("Turret_Caller", "trigger") == 0 and isActive("Turret_Auto", "trigger") == 0 then
+		tempTimer(1, [[wm.note("Target acquition disabled (&lt;yellow&gt;turretcall&lt;white&gt;|&lt;yellow&gt;turretauto&lt;white&gt;)")]])
+	end
+end
+
+function wm.aether.collector.setup()
+	wm.note("Running collector module initialization")
+	if isActive("Siphon_Announce", "trigger") == 1 then
+		tempTimer(1, [[wm.note("Vocal accompaniment for siphon attempts enabled (&lt;yellow&gt;siphonsilent&lt;white&gt;)")]])
+	else
+		tempTimer(1, [[wm.note("Vocal accompaniment for siphon attempts disabled (&lt;yellow&gt;siphonannounce&lt;white&gt;) ")]])
+	end
+	if isActive("CallSiphon", "trigger") == 1 and isActive("AutoSiphon", "trigger") == 1 then
+		tempTimer(1.5, [[wm.note("Conflicting siphon methods active, please rectify", "red")]])
+	else
+		if isActive("CallSiphon", "trigger") == 1 then
+			tempTimer(2.5, [[wm.note("Siphon attempt by pilot command enabled")]])
+		end
+		if isActive("AutoSiphon", "trigger") == 1 then
+			tempTimer(2.5, [[expandAlias("siphonauto", false)]])
+		end
+		if isActive("CallSiphon", "trigger") == 0 and isActive("AutoSiphon", "trigger") == 0 then
+			tempTimer(2.5, [[wm.note("Active siphoning disabled (&lt;yellow&gt;siphoncall&lt;white&gt;|&lt;yellow&gt;siphonauto&lt;white&gt;)")]])
+		end
+	end
+end</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>
