@@ -349,88 +349,80 @@ if not wm.inf then wm.inf = {} end</script>
 			<name>skill_finder</name>
 			<packageName></packageName>
 			<script>function skill_finder()
-local name = gmcp.Char.Skills.List.group
-if name == "influence" then
-	wm.inf.skills = gmcp.Char.Skills.List.list
-
--- empower table
-	wm.inf.empower = {}
-	if table.contains(wm.inf.skills, "Compliments") then
-		table.insert(wm.inf.empower, "compliments")
-	end
-	if table.contains(wm.inf.skills, "Admiration") then
-		table.insert(wm.inf.empower, "admiration")
-	end
-	if table.contains(wm.inf.skills, "Praise") then
-		table.insert(wm.inf.empower, "praise")
-	end
---charity table
-	wm.inf.charity = {}
-	if table.contains(wm.inf.skills, "Begging") then
-		table.insert(wm.inf.charity, "begging")
-	end
-	if table.contains(wm.inf.skills, "Supplication") then
-		table.insert(wm.inf.charity, "supplication")
-	end
-	if table.contains(wm.inf.skills, "Wheedling") then
-		table.insert(wm.inf.charity, "wheedling")
-	end
---weaken table
-	wm.inf.weaken = {}
-	if table.contains(wm.inf.skills, "Teasing") then
-		table.insert(wm.inf.weaken, "teasing")
-	end
-	if table.contains(wm.inf.skills, "Mockery") then
-		table.insert(wm.inf.weaken, "mockery")
-	end
-	if table.contains(wm.inf.skills, "Derision") then
-		table.insert(wm.inf.weaken, "derision")
-	end
---seduction table
-	wm.inf.seduce = {}
-	if table.contains(wm.inf.skills, "Flattery") then
-		table.insert(wm.inf.seduce, "flattery")
-	end
-	if table.contains(wm.inf.skills, "Charm") then
-		table.insert(wm.inf.seduce, "charm")
-	end
-	if table.contains(wm.inf.skills, "Beguiling") then
-		table.insert(wm.inf.seduce, "beguiling")
-	end
---paranoia table
-	wm.inf.paranoia = {}
-	if table.contains(wm.inf.skills, "Rumours") then
-		table.insert(wm.inf.paranoia, "rumours")
-	end
-	if table.contains(wm.inf.skills, "Distrust") then
-		table.insert(wm.inf.paranoia, "distrust")
-	end
-	if table.contains(wm.inf.skills, "Conspiracies") then
-		table.insert(wm.inf.paranoia, "conspiracies")
-	end
---city table
-	wm.inf.city = {}
-	if table.contains(wm.inf.skills, "Accordance") then
-		table.insert(wm.inf.city, "accordance")
-	end
-	if table.contains(wm.inf.skills, "Collaboration") then
-		table.insert(wm.inf.city, "collaboration")
-	end
-	if table.contains(wm.inf.skills, "Assimilation") then
-		table.insert(wm.inf.city, "assimilation")
-	end
-	if table.contains(wm.inf.skills, "Lectures") then
-		table.insert(wm.inf.city, "lectures")
-	end
-	if table.contains(wm.inf.skills, "Recitation") then
-		table.insert(wm.inf.city, "recitation")
-	end
-	if table.contains(wm.inf.skills, "Oration") then
-		table.insert(wm.inf.city, "oration")
-	end
-end
-
-
+  local name = gmcp.Char.Skills.List.group
+  if name == "influence" then
+    wm.inf.skills = gmcp.Char.Skills.List.list
+    -- empower table
+    wm.inf.empower = {}
+    if table.contains(wm.inf.skills, "Compliments") then
+      table.insert(wm.inf.empower, "compliments")
+    end
+    if table.contains(wm.inf.skills, "Admiration") then
+      table.insert(wm.inf.empower, "admiration")
+    end
+    if table.contains(wm.inf.skills, "Praise") then
+      table.insert(wm.inf.empower, "praise")
+    end
+    --charity table
+    wm.inf.charity = {}
+    if table.contains(wm.inf.skills, "Begging") then
+      table.insert(wm.inf.charity, "begging")
+    end
+    if table.contains(wm.inf.skills, "Supplication") then
+      table.insert(wm.inf.charity, "supplication")
+    end
+    if table.contains(wm.inf.skills, "Wheedling") then
+      table.insert(wm.inf.charity, "wheedling")
+    end
+    --weaken table
+    wm.inf.weaken = {}
+    if table.contains(wm.inf.skills, "Teasing") then
+      table.insert(wm.inf.weaken, "teasing")
+    end
+    if table.contains(wm.inf.skills, "Mockery") then
+      table.insert(wm.inf.weaken, "mockery")
+    end
+    if table.contains(wm.inf.skills, "Derision") then
+      table.insert(wm.inf.weaken, "derision")
+    end
+    --seduction table
+    wm.inf.seduce = {}
+    if table.contains(wm.inf.skills, "Flattery") then
+      table.insert(wm.inf.seduce, "flattery")
+    end
+    if table.contains(wm.inf.skills, "Charm") then
+      table.insert(wm.inf.seduce, "charm")
+    end
+    if table.contains(wm.inf.skills, "Beguiling") then
+      table.insert(wm.inf.seduce, "beguiling")
+    end
+    --paranoia table
+    wm.inf.paranoia = {}
+    if table.contains(wm.inf.skills, "Rumours") then
+      table.insert(wm.inf.paranoia, "rumours")
+    end
+    if table.contains(wm.inf.skills, "Distrust") then
+      table.insert(wm.inf.paranoia, "distrust")
+    end
+    if table.contains(wm.inf.skills, "Conspiracies") then
+      table.insert(wm.inf.paranoia, "conspiracies")
+    end
+    --city table
+    wm.inf.city = {}    
+    local citySkills = {
+      "Accordance","Collaboration","Assimilation",
+      "Lectures","Recitation","Oration",
+      "Liberty","Freedom","Revolution",
+      "Manipulation","Intrigue","Trickery",
+      "Shock","Awe","Brainwash",
+      "Proselytizing","Preaching","Evangelizing",
+    }
+    for skill in citySkills do
+      if table.contains(wm.inf.skills, skill) then
+        table.insert(wm.inf.city, string.lower(skill))
+      end
+    end
+  end
 end</script>
 			<eventHandlerList>
 				<string>gmcp.Char.Skills.List</string>
@@ -458,7 +450,7 @@ end</script>
 		</Script>
 	</ScriptPackage>
 	<KeyPackage />
-	<VariablePackage>
-		<HiddenVariables />
-	</VariablePackage>
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
 </MudletPackage>
