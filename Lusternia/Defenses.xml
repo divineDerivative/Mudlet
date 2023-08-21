@@ -15381,6 +15381,22 @@ end
 </script>
 			<eventHandlerList />
 		</Script>
+		<Script isActive="yes" isFolder="no">
+			<name>Utilities</name>
+			<packageName></packageName>
+			<script>function def.hasAbility(skill, ability)
+  skill = string.lower(skill)
+  ability = string.title(ability)
+  if not def.skills[skill] then
+    return false
+  elseif table.contains(def.skills[skill], ability) then
+    return true
+  else
+    return false
+  end
+end</script>
+			<eventHandlerList />
+		</Script>
 	</ScriptPackage>
 	<KeyPackage />
 	<HelpPackage>
